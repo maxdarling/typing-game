@@ -6,7 +6,7 @@
 - Game ideas
   - Game loop:
     - Have a timer
-    - Each word gives a bonus time/there are *some* checkpoints gicing you extra
+    - Each word gives a bonus time/there are *some* checkpoints giving you extra
       time
     - Errors decrease your timer
     - You have a global points: the total time

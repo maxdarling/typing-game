@@ -12,13 +12,28 @@
         background: red;
       }
       .selected {
-        background: grey;
+        background: lightgrey;
       }
       #word-list {
-        font-size: 2em;
+        font-size: 2.5em;
       }
       #gameover {
         font-size: 3em;
+      }
+      #word-list {
+        animation: pulse-blur 60s ease-in-out infinite;
+      }
+
+      @keyframes pulse-blur {
+        0% {
+          filter: blur(0);
+        }
+        50% {
+          filter: blur(3px);
+        }
+        100% {
+          filter: blur(0);
+        }
       }
     </style>
   </head>
