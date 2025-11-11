@@ -12,12 +12,12 @@ const TargetText = ({ pastWords, nextWords }) => {
     );
   });
   const upcomingWords = nextWords.map((t, i) => (
-    <span key={i} >
+    <span key={i} className={i === 0 ? "selected" : ""}>
       {t + " "}
     </span>
   ));
   return (
-    <div>
+    <div id="word-list">
       {previousWords}
       {upcomingWords}
     </div>
