@@ -11,7 +11,7 @@ const Game = () => {
 
   function updateWord(word) {
     if (word[word.length - 1] === " ") {
-      word = word.substring(0, word.length - 2);
+      word = word.substring(0, word.length - 1);
       setPastWords([...pastWords, [nextWords[0], word]]);
       setNextWords(nextWords.slice(1));
       setCurrWord("");
