@@ -1,6 +1,6 @@
 import React from "react";
 
-const Textbox = ({ updateWord, currWord }) => {
+const Textbox = ({ submitWord, currWord }) => {
   let curr = "";
   return (
     <input
@@ -8,7 +8,8 @@ const Textbox = ({ updateWord, currWord }) => {
       type="text"
       value={currWord}
       autoFocus
-      onChange={(e) => updateWord(e.target.value)}
+      onBlur={(e) => e.target.focus()}
+      onChange={(e) => submitWord(e.target.value)}
     />
   );
 };

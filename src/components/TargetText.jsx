@@ -12,7 +12,7 @@ const TargetText = ({ pastWords, nextWords }) => {
     );
   });
   const upcomingWords = nextWords.map((t, i) => (
-    <span key={i} style={{ fontSize: "48px", fontWeight: "bold" }}>
+    <span key={i} >
       {t + " "}
     </span>
   ));

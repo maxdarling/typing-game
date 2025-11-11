@@ -1,18 +1,39 @@
 import React from "react";
 import Textbox from "./Textbox";
 import TargetText from "./TargetText";
+import Clock from "./Clock";
 
 const Game = () => {
-  const text = ["ciehnatie", "cniethaine", "cnietahei"];
+  const text = ["hello", "world", "and", "welcome", "to", "our", "game"];
   let [pastWords, setPastWords] = React.useState([]); // (expected, actual)
   let [nextWords, setNextWords] = React.useState(text);
-
   let [currWord, setCurrWord] = React.useState("");
 
-  function updateWord(word) {
+  const startTimeSeconds = 10;
+  let [timeLeft, setTimeLeft] = React.useState(startTimeSeconds);
+  let [gameOver, setGameOver] = React.useState(false);
+
+  function updateTimeLeft(inc) {
+      setTimeLeft((t) => {
+        if (t + inc <= 0) {
+          setGameOver(true);
+        }
+        return t + inc;
+      })
+  }
+
+  React.useEffect(() => {
+    setInterval(() => updateTimeLeft(-1), 1000);
+  }, []);
+
+  function submitWord(word) {
     if (word[word.length - 1] === " ") {
       word = word.substring(0, word.length - 1);
-      setPastWords([...pastWords, [nextWords[0], word]]);
+      const expected = nextWords[0]
+      const correctness = word === expected;
+      updateTimeLeft(correctness ? 1 : -1);
+
+      setPastWords([...pastWords, [expected, word]]);
       setNextWords(nextWords.slice(1));
       setCurrWord("");
     } else {
@@ -22,7 +43,9 @@ const Game = () => {
 
   return (
     <div>
-      <Textbox currWord={currWord} updateWord={updateWord} />
+      <p>{gameOver ? "GAME OVER" : "NOT OVER"}</p>
+      <Clock timeLeft={timeLeft} />
+      <Textbox currWord={currWord} submitWord={submitWord} />
       <TargetText nextWords={nextWords} pastWords={pastWords} />
     </div>
   );
