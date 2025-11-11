@@ -7,7 +7,37 @@ import getWord from "../wordlist";
 import Exchange from "./Exchange";
 
 const Game = () => {
-  const text = ["hello", "world", "and", "welcome", "to", "our", "game"];
+  const text = [
+    "Hello",
+    "and",
+    "welcome",
+    "to",
+    "our",
+    "game.",
+    "Correct",
+    "words",
+    "gives",
+    "you",
+    "three",
+    "seconds",
+    "more,",
+    "incorrect",
+    "one",
+    "second",
+    "less.",
+    "Each",
+    "new",
+    "word",
+    "may",
+    "introduce",
+    "key",
+    "swaps!",
+    "And",
+    "watch",
+    "out",
+    "for",
+    "blurs!",
+  ];
   let [pastWords, setPastWords] = React.useState([]); // (expected, actual)
   let [nextWords, setNextWords] = React.useState(text);
   let [currWord, setCurrWord] = React.useState("");
