@@ -22,7 +22,7 @@ const Game = () => {
 
   return (
     <div>
-      <Textbox updateWord={updateWord} />
+      <Textbox currWord={currWord} updateWord={updateWord} />
       <TargetText nextWords={nextWords} pastWords={pastWords} />
     </div>
   );
