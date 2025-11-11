@@ -2,6 +2,7 @@ import React from "react";
 import Textbox from "./Textbox";
 import TargetText from "./TargetText";
 import Clock from "./Clock";
+import GameOver from "./GameOver";
 
 const Game = () => {
   const text = ["hello", "world", "and", "welcome", "to", "our", "game"];
@@ -41,15 +42,20 @@ const Game = () => {
       setCurrWord(word);
     }
   }
-
-  return (
-    <div>
-      <p>{gameOver ? "GAME OVER" : "NOT OVER"}</p>
-      <Clock timeLeft={timeLeft} />
-      <Textbox currWord={currWord} submitWord={submitWord} />
-      <TargetText nextWords={nextWords} pastWords={pastWords} />
-    </div>
-  );
+  if (!gameOver) {
+    return (
+      <div>
+        <Clock timeLeft={timeLeft} />
+        <Textbox currWord={currWord} submitWord={submitWord} />
+        <TargetText nextWords={nextWords} pastWords={pastWords} />
+      </div>
+    );
+  } else
+    return (
+      <div>
+        <GameOver />
+      </div>
+    );
 };
 
 export default Game;
