@@ -1,12 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Textbox from './components/Textbox';
-import TargetText from './components/TargetText';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Game from "./components/Game";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <div>
-    <Textbox />
-    <TargetText />
-  </div>
-);
-
+ReactDOM.createRoot(document.getElementById("root")).render(<Game />);

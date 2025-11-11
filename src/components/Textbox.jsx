@@ -1,17 +1,15 @@
-import React from 'react';
-import { updateWord } from '../state';
+import React from "react";
 
-
-const Textbox = () => {
+const Textbox = ({ updateWord }) => {
   let curr = "";
   return (
     <input
       id="textbox"
       type="text"
       autoFocus
-      onChange={(e) => updateWord(e.target.value)} />
+      onChange={(e) => updateWord(e.target.value)}
+    />
   );
 };
 
 export default Textbox;
-

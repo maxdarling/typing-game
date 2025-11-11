@@ -1,21 +1,12 @@
-import React from 'react';
-import {pastWords, nextWords} from '../state';
-// upcoming words
-// past words (with info about correctness)
+import React from "react";
 
-const TargetText = () => {
-
+const TargetText = ({ pastWords, nextWords }) => {
   const formatted = nextWords.map((t, i) => (
-    <span key={i} style={{ fontSize: '48px', fontWeight: 'bold' }}>
+    <span key={i} style={{ fontSize: "48px", fontWeight: "bold" }}>
       {t + " "}
     </span>
-  ))
-  return (
-    <div>
-      {formatted}
-    </div>
-  );
+  ));
+  return <div>{formatted}</div>;
 };
 
 export default TargetText;
-
